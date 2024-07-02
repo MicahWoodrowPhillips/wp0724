@@ -56,7 +56,7 @@ Your code must include JUnits to prove your solution is correct.
 The proof should include the following scenarios:
 
 
-| Test          | Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Test 6 |
+|               | Test 1 | Test 2 | Test 3 | Test 4 | Test 5 | Test 6 |
 | ------------- | ------ | ------ | ------ | ------ | ------ | ------ |
 | Tool Code     | JAKR   | LADW   | CHNS   | JAKD   | JAKR   | JAKR   |
 | Checkout Date | 9/3/15 | 7/2/20 | 7/2/15 | 9/3/15 | 7/2/15 | 7/2/20 |
