@@ -2,6 +2,7 @@
 
 
 A demo app using console I/O to simulate a sales tool used by a company renting out large tools.
+Named app the HART- Hardware Asset Rental Tool - because if you name things, you care about them more.
 
 ## Tools
 Tools have
