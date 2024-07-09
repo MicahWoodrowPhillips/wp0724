@@ -13,6 +13,13 @@ Tools have
 - A "Holiday" cost, different from daily charges.
 - A "Weekend" cost, different from daily charges
 
+## Holidays
+There are only two holidays in this scenario:
+- Independence Day, July 4th - If falls on weekend, it is observed on the closest weekday (if Sat,
+then Friday before, if Sunday, then Monday after)
+- Labor Day - First Monday in September
+
+
 ## Checkout
 The sale transaction (Checkout) requires
 - Tool Code
