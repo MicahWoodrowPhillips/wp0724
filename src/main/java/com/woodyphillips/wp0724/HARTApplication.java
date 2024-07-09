@@ -13,6 +13,10 @@ public class HARTApplication extends Thread {
         this("");
     }
 
+    public void run() {
+        //  Need to do stuff in here
+    }
+
     public boolean receivedInput(String s) {
         if (s != null && s.length() > 0) {
             return true;
