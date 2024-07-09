@@ -1,8 +1,22 @@
 package com.woodyphillips.wp0724;
 
-public class HARTApplication{
-    public static void main(String args[])
-    {
-        System.out.println("Hey");
+import java.util.Hashtable;
+
+public class HARTApplication extends Thread {
+    private Hashtable<String, HardwareTool> toolsDataBase;
+
+    public HARTApplication(String... args) {
+        // args passed in from CLI can be used here.
+    }
+
+    public HARTApplication() {
+        this("");
+    }
+
+    public boolean receivedInput(String s) {
+        if (s != null && s.length() > 0) {
+            return true;
+        }
+        return false;
     }
 }
