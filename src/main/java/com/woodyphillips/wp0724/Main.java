@@ -1,9 +1,11 @@
 package com.woodyphillips.wp0724;
 
-public class Main {
-    public static void main(String ... args) {
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-        HARTApplication application = new HARTApplication(args);
-        application.start();
+@SpringBootApplication
+public class Main {
+    public static void main(String[] args) {
+        SpringApplication.run(Main.class, args);
     }
 }
