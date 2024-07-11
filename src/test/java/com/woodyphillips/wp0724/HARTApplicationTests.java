@@ -1,11 +1,20 @@
 package com.woodyphillips.wp0724;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
+@SpringJUnitConfig
+@SpringBootTest
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 public class HARTApplicationTests {
+
     HARTApplication out; // Object Under Test
 
     @BeforeEach
@@ -63,5 +72,4 @@ public class HARTApplicationTests {
             }
         }
     }
-
 }
