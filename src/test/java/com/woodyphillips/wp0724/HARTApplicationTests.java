@@ -8,6 +8,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.text.DateFormat;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.fail;
 
 @SpringJUnitConfig
@@ -16,10 +23,12 @@ import static org.junit.jupiter.api.Assertions.fail;
 public class HARTApplicationTests {
 
     HARTApplication out; // Object Under Test
+    DateFormat dateFormatter;
 
     @BeforeEach
     void setUp() {
         out = new HARTApplication();
+        dateFormatter = new SimpleDateFormat("d/mm/yyyy");
     }
 
     @Nested
@@ -27,6 +36,25 @@ public class HARTApplicationTests {
         @Test
         void Test1_Discount_is_out_of_bounds_With_JAKR() {
 
+            // Given
+            Date test_1_date = null;
+            Date test_1_checkin_date = null;
+            try {
+                test_1_date = dateFormatter.parse("09/03/2015");
+                test_1_checkin_date = dateFormatter.parse("09/08/2015");
+            } catch (ParseException e) {
+                fail("Test failed with parse exception, correct the date format being called into Test1");
+            }
+
+            // When
+            RentalAgreement actual = out.createRental("JAKR", test_1_date, 5, 101);
+
+            // Then
+            assertThat(actual).isNotNull();
+            assertThat(actual.getToolCode()).isEqualTo("JAKR");
+            assertThat(actual.getCheckoutDate()).isEqualTo(test_1_date);
+            // test_1_date + 5 rental days == test_1_checkin_date
+            assertThat(actual.getCheckInDate()).isEqualTo(test_1_date.compareTo(test_1_checkin_date));
         }
 
         @Test

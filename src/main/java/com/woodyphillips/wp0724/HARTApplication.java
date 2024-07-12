@@ -2,7 +2,9 @@ package com.woodyphillips.wp0724;
 
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.Hashtable;
+import com.woodyphillips.wp0724.Tool.ToolBuilder;
 
 @Component
 public class HARTApplication {
@@ -32,5 +34,17 @@ public class HARTApplication {
 
     public boolean receivedInput(String s) {
         return s != null && !s.isEmpty();
+    }
+
+    // Utility method in creating a rental agreement; doing it this way as it is faster to test this one piece put together
+    // by the builder steps than to test each step of the builder in each test that builds a RentalAgreement.
+    // Steps to test the builder can be separated from this easier this way.
+    public RentalAgreement createRental(String toolCode, Date date, int rentalDays, int discountPercent) {
+        // Build tool
+        Tool tool = null;
+
+
+        RentalAgreement rentalAgreement = new RentalAgreement(tool, date, rentalDays, discountPercent);
+        return null;
     }
 }
